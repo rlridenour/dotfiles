@@ -110,7 +110,7 @@
 (tooltip-mode -1)
 (setq sentence-end-double-space nil)   
 
-(set-frame-font "Menlo-13")
+(set-frame-font "Bitstream\ Vera\ Sans\ Mono-12")
 
 ;; recentf stuff
 (require 'recentf)
