@@ -264,3 +264,14 @@
 
 ;; In LaTeX mode, automatically re-fill text
 (add-hook 'latex-mode-hook 'auto-fill-mode)
+
+;; ignore byte-compile warnings
+(setq byte-compile-warnings '(not nresolved
+                                  free-vars
+                                  callargs
+                                  redefine
+                                  obsolete
+                                  noruntime
+                                  cl-functions
+                                  interactive-only
+                                  ))
