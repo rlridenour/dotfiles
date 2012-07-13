@@ -140,6 +140,7 @@
     ;; pick whatever numbers make sense for you
     (if (> (x-display-pixel-width) 1280)
            (add-to-list 'default-frame-alist (cons 'width 80))
+           (add-to-list 'default-frame-alist (cons 'width 90))
            (add-to-list 'default-frame-alist (cons 'width 80)))
     ;; for the height, subtract a couple hundred pixels
     ;; from the screen height (for panels, menubars and
