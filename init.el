@@ -67,7 +67,7 @@
 (setq my:el-get-packages
       (append
        my:el-get-packages
-       (loop for src in el-get-sources collect (el-get-source-name src))))
+ (loop for src in el-get-sources collect (el-get-source-name src))))
 
 ;; install new packages and init already installed packages
 (el-get 'sync my:el-get-packages)
@@ -93,6 +93,11 @@
 (global-visual-line-mode 1)
 
 (global-linum-mode 1) ; always show line numbers
+
+
+;; Fix line numbers - removes graphics glitch
+(setq linum-format " %d ")
+
 
 (setq ido-enable-flex-matching t)
   (setq ido-everywhere t)
