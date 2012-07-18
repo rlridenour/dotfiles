@@ -73,7 +73,18 @@
 (el-get 'sync my:el-get-packages)
 
 
+;; yasnippet
+    (add-to-list 'load-path
+                  "~/.emacs.d/el-get/yasnippet")
+    (require 'yasnippet)
+    (yas/global-mode 1)
 
+;; Use yasnippet in markdown-mode
+
+(defun markdown-unset-tab ()
+  "markdown-mode-hook"
+  (define-key markdown-mode-map (kbd "<tab>") nil))
+(add-hook 'markdown-mode-hook '(lambda() (markdown-unset-tab)))
 
 ; sane path
 (setq path "/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/texbin:/Users/Randy/.rvm/bin")
@@ -109,7 +120,7 @@
 
 (setq make-backup-files nil)
 (setq auto-save-default nil)
-(setq-default tab-width 2)
+(setq-default tab-width 4)
 (setq-default indent-tabs-mode nil)
 (setq inhibit-startup-message t)
 
