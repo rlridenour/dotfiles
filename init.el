@@ -214,5 +214,5 @@
 
 ;;========================================
 ;; start the emacsserver that listens to emacsclient
-(server-start)
+;;(server-start)
 
