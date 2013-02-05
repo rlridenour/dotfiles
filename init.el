@@ -211,9 +211,3 @@
 ;;                                   interactive-only
 ;;                                  ))
 
-;;(load-theme 'zenburn t)
-
-;;========================================
-;; start the emacsserver that listens to emacsclient
-;;(server-start)
-
