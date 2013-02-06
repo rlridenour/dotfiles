@@ -20,9 +20,10 @@
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
+;; Theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/elpa/zenburn-theme-1.5")
 (load-theme 'zenburn t)
-
+;; (load-theme 'solarized-dark t)
 
 
 ;; Font-face setup. Check the availability of a some default fonts, in
@@ -51,8 +52,9 @@
  )
 
 
-;;(load-theme 'solarized-dark t)
 
+
+;; Markdown Settings
 (global-visual-line-mode t)
 (blink-cursor-mode t)
 (setq sentence-end-double-space nil)
@@ -71,7 +73,31 @@
   (define-key markdown-mode-map (kbd "<tab>") nil))
 (add-hook 'markdown-mode-hook '(lambda() (markdown-unset-tab)))
 
-; sane path
+;; C-c m previews Markdown files in marked
+(defun markdown-preview-file ()
+  "run Marked on the current file and revert the buffer"
+  (interactive)
+  (shell-command
+   (format "open -a /Applications/Marked.app %s"
+       (shell-quote-argument (buffer-file-name))))
+)
+(global-set-key "\C-cm" 'markdown-preview-file)
+
+;; Make markdown-mode use multimarkdown
+(defun markdown-custom ()
+  "markdown-mode-hook"
+  (setq markdown-command "multimarkdown"))
+(add-hook 'markdown-mode-hook '(lambda() (markdown-custom)))
+
+;;  Textmate-mode and Peep-open
+(add-to-list 'load-path "~/.emacs.d/elpa/textmate-5/")
+(require 'textmate)
+(add-to-list 'load-path "~/.emacs.d/vendor/")
+(require 'peepopen)
+(textmate-mode)
+(setq ns-pop-up-frames nil)
+
+;; sane path
 (setq path "/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/texbin:/Users/Randy/.rvm/bin")
 (setenv "PATH" path)
 
@@ -124,22 +150,6 @@
 ;; use abbrev-mode
 (setq default-abbrev-mode t)
 
-
-;; C-c m previews Markdown files in marked
-(defun markdown-preview-file ()
-  "run Marked on the current file and revert the buffer"
-  (interactive)
-  (shell-command
-   (format "open -a /Applications/Marked.app %s"
-       (shell-quote-argument (buffer-file-name))))
-)
-(global-set-key "\C-cm" 'markdown-preview-file)
-
-;; Make markdown-mode use multimarkdown
-(defun markdown-custom ()
-  "markdown-mode-hook"
-  (setq markdown-command "multimarkdown"))
-(add-hook 'markdown-mode-hook '(lambda() (markdown-custom)))
 
 ;; Org-mode suggested key bindings
 (global-set-key "\C-cl" 'org-store-link)
