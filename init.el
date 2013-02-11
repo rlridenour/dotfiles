@@ -51,7 +51,12 @@
   (set-face-attribute 'default nil :height 140 :font "Inconsolata"))
  )
 
-
+;; Anything
+(add-to-list 'load-path "~/.emacs.d/elpa/anything-1.287/")
+(add-to-list 'load-path "~/.emacs.d/elpa/anything-config-0.4.1/")
+(add-to-list 'load-path "~/.emacs.d/elpa/anything-match-plugin-1.27/")
+(require 'anything-match-plugin)
+(require 'anything-config)
 
 
 ;; Markdown Settings
