@@ -2,6 +2,9 @@
                           ("gnu" . "http://elpa.gnu.org/packages/")
                           ("marmalade" . "http://marmalade-repo.org/packages/")))
 
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
 ;; ido-mode
 (require 'ido)
 (ido-mode t)
@@ -52,12 +55,14 @@
  )
 
 ;; Anything
-(add-to-list 'load-path "~/.emacs.d/elpa/anything-1.287/")
-(add-to-list 'load-path "~/.emacs.d/elpa/anything-config-0.4.1/")
-(add-to-list 'load-path "~/.emacs.d/elpa/anything-match-plugin-1.27/")
-(require 'anything-match-plugin)
-(require 'anything-config)
+;; (add-to-list 'load-path "~/.emacs.d/elpa/anything-1.287/")
+;; (add-to-list 'load-path "~/.emacs.d/elpa/anything-config-0.4.1/")
+;; (add-to-list 'load-path "~/.emacs.d/elpa/anything-match-plugin-1.27/")
+;; (require 'anything-match-plugin)
+;; (require 'anything-config)
 
+(add-to-list 'load-path "~/.emacs.d/elpa/helm-20130211.1915")
+(require 'helm-config)
 
 ;; Markdown Settings
 (global-visual-line-mode t)
