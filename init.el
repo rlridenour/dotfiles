@@ -183,6 +183,9 @@
 ;; Use Shift-arrow keys to move between windows 
 (windmove-default-keybindings)
 
+;; cycle through buffers
+(global-set-key (kbd "<C-tab>") 'bury-buffer)
+
 ;; Org-mode suggested key bindings
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-cc" 'org-capture)
