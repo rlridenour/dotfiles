@@ -64,7 +64,7 @@
 (add-to-list 'load-path "~/.emacs.d/elpa/helm-20130211.1915")
 (require 'helm-config)
 (global-set-key (kbd "C-c h") 'helm-mini)
-(helm-mode 1)
+;; (helm-mode 1)
 
 ;; Markdown Settings
 (global-visual-line-mode t)
@@ -168,7 +168,7 @@
   (interactive)
   (end-of-line)
   (newline-and-indent))
-  (global-set-key (kbd "s-j") 'newline-next)
+  (global-set-key (kbd "s-n") 'newline-next)
 
 
 (defun newline-previous ()
@@ -178,8 +178,10 @@
   (newline)
   (previous-line)
   (indent-according-to-mode))
-  (global-set-key (kbd  "s-k") 'newline-previous)
+  (global-set-key (kbd  "s-N") 'newline-previous)
 
+;; Use Shift-arrow keys to move between windows 
+(windmove-default-keybindings)
 
 ;; Org-mode suggested key bindings
 (global-set-key "\C-cl" 'org-store-link)
