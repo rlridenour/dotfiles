@@ -73,7 +73,20 @@
 
 (add-to-list 'load-path "~/.emacs.d/elpa/yasnippet-0.8.0/")
 (require 'yasnippet)
+;; (yas/load-directory "~/.emacs.d/elpa/yasnippet-0.8.0")
+
+;; Develop and keep personal snippets under ~/emacs.d/mysnippets
+(setq yas/root-directory "~/Dropbox/emacs/snippets")
+
+;; Load the snippets
+(yas/load-directory yas/root-directory)
+
+;; (setq yas-snippet-dirs
+;;       '("~/Dropbox/snippets"            ;; personal snippets
+;; ))
+
 (yas-global-mode 1)
+
 
 (add-to-list 'load-path "~/.emacs.d/elpa/markdown-mode-1.9/")
 (autoload 'markdown-mode "markdown-mode"
