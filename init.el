@@ -220,6 +220,12 @@
 
 (global-set-key "\C-c\C-u" 'uncomment-region)
 
+;; Multiple cursors
+
+(add-to-list 'load-path "~/.emacs.d/elpa/multiple-cursors-20130211.732/")
+(require 'multiple-cursors)
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+
 ;; Bind file extensions to modes
 
 (setq auto-mode-alist (cons '("\\.log\\'" . fundamental-mode) auto-mode-alist))
