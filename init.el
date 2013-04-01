@@ -193,9 +193,10 @@
   (indent-according-to-mode))
   (global-set-key (kbd  "s-N") 'newline-previous)
 
-;; Pair parantheses
+;; Pair parantheses and auto-indent
 
 (electric-pair-mode +1)
+(electric-indent-mode +1)
 
 ;; Use Shift-arrow keys to move between windows 
 (windmove-default-keybindings)
