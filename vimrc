@@ -24,14 +24,15 @@ filetype plugin indent on     " required!
 set nocompatible
 
 " disable intro message
-" set shortmess+=I
+set shortmess+=I
 
 
-
+" Make grep generate a file name - required for Latex-Suite
 set grepprg=grep\ -nH\ $*
 
 
 
+" Save folds
 au BufWinLeave ?* mkview
 au BufWinEnter ?* silent loadview
 
